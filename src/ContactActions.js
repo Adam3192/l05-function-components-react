@@ -5,7 +5,7 @@ import Stack from 'react-bootstrap/Stack'
 function ContactActions(props) {
   return <Stack direction="horizontal" gap={3}>
     { (props.selectedContact)
-      ? <Button variant="danger" onClick={props.onDeleteContact}>
+      ? <Button variant="danger" onClick={props.onDeleteContact.bind(this, props.selectedContact)}>
           Delete {props.selectedContact}
         </Button>
       : ""
